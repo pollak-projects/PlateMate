@@ -1,0 +1,87 @@
+erDiagram
+
+User{
+    uuid id PK
+    string name
+    string hashedPwd
+    string email UK
+    int permissionlevel
+    DateTime createdAt
+    DateTime updatedAt
+}
+
+permissionSettings{
+    int id PK
+    string section UK
+}
+
+Tables{
+    int id PK
+    int tableNumber UK
+}
+
+PaymentMethods{
+    int id PK
+    string name UK
+}
+
+Category{
+    int id PK
+    string name UK
+}
+
+Item{
+    int id PK
+    string name UK
+    int price
+    int categoryId FK
+}
+
+Paid{
+    int id PK
+    int tableId FK 
+    int itemId FK
+    int paymentMethodId FK
+    DateTime paidAt
+}
+
+Orders{
+    int id PK
+    int tableId FK
+    int itemId FK
+    boolean isDone
+    DateTime orderedAt
+}
+
+ReservedTable{
+    int id PK
+    string name
+    int numberOfCustomers
+    int tableId FK
+    DateTime reservedAt 
+    DateTime reservedUntil 
+}
+
+OpeningHours{
+    int id PK
+    string dayName UK
+    DateTime fromHour
+    DateTime untilHour
+}
+
+Sessions{
+    string id PK
+    int userId FK
+    string ip
+    DateTime expires
+}
+
+Orders}|--||Item:contains
+Orders}|--||Tables:contains
+Paid}|--||Tables:contains
+Paid}|--||Item:contains
+Item}|--||Category:contains
+ReservedTable}|--||Tables:contains
+Paid}|--||PaymentMethods:contains
+User}|--||permissionSettings:allows
+User||--||Sessions:allows
