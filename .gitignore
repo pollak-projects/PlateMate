@@ -1,0 +1,10 @@
+# Node modules
+node_modules/
+
+# VS Code settings
+.vscode/
+
+# README file
+README.md
+
+.env
