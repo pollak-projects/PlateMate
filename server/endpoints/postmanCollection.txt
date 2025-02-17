@@ -1,0 +1,1198 @@
+{
+  "collection": {
+    "info": {
+      "_postman_id": "abb17203-d438-4fff-8274-cb6338b9d8c0",
+      "name": "Vizsgaremek",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+      "updatedAt": "2024-10-28T20:04:27.000Z",
+      "createdAt": "2024-10-28T12:23:33.000Z",
+      "lastUpdatedBy": "38461072",
+      "uid": "38461072-abb17203-d438-4fff-8274-cb6338b9d8c0"
+    },
+    "item": [
+      {
+        "name": "auths",
+        "item": [
+          {
+            "name": "login",
+            "id": "a9f9dc1b-954a-49ee-875a-e5f49c52d66c",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "POST",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"email\" : \"janipatrik138@gmail.com\",\r\n    \"password\" : \"jovagyok\"\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "localhost:3000/login",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "login"
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-a9f9dc1b-954a-49ee-875a-e5f49c52d66c"
+          },
+          {
+            "name": "register",
+            "id": "fefa6053-c322-4d9d-9470-868dfd1b37dd",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "POST",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"name\": \"xy\",\r\n    \"email\": \"xy@gmail.com\",\r\n    \"hashedPassword\": \"xy\",\r\n    \"permissionId\": 1\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "localhost:3000/register",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "register"
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-fefa6053-c322-4d9d-9470-868dfd1b37dd"
+          },
+          {
+            "name": "logout",
+            "id": "8701b4a4-61c3-4d07-bd3a-ec20a4a6573e",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "POST",
+              "header": [],
+              "url": {
+                "raw": "localhost:3000/logout",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "logout"
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-8701b4a4-61c3-4d07-bd3a-ec20a4a6573e"
+          }
+        ],
+        "id": "4e0647fc-3f2a-4609-ab32-9b816209cb6f",
+        "uid": "38461072-4e0647fc-3f2a-4609-ab32-9b816209cb6f"
+      },
+      {
+        "name": "categories",
+        "item": [
+          {
+            "name": "getAllCategories",
+            "id": "da6a6ec7-aa2c-46ff-b2d9-32f00af95e8a",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "localhost:3000/category/",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "category",
+                  ""
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-da6a6ec7-aa2c-46ff-b2d9-32f00af95e8a"
+          },
+          {
+            "name": "getCategoryById",
+            "id": "ff8a977d-dc55-43c7-9e15-c854c9811976",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "localhost:3000/category/:id",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "category",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-ff8a977d-dc55-43c7-9e15-c854c9811976"
+          },
+          {
+            "name": "createCategory",
+            "id": "a9256fc0-fe64-4b88-ad6a-0877546c8e27",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "POST",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"name\" : \"xy\"\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "localhost:3000/",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  ""
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-a9256fc0-fe64-4b88-ad6a-0877546c8e27"
+          },
+          {
+            "name": "deleteCategory",
+            "id": "b1cebc44-f145-489e-beae-57bb3625e1fd",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "localhost:3000/category/:id",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "category",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-b1cebc44-f145-489e-beae-57bb3625e1fd"
+          }
+        ],
+        "id": "e669bb47-6be7-4f4b-8e65-80a44f31ccc7",
+        "uid": "38461072-e669bb47-6be7-4f4b-8e65-80a44f31ccc7"
+      },
+      {
+        "name": "items",
+        "item": [
+          {
+            "name": "getAllItems",
+            "id": "bc8b143a-7802-4953-8f41-9f49a171439f",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "localhost:3000/item/",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "item",
+                  ""
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-bc8b143a-7802-4953-8f41-9f49a171439f"
+          },
+          {
+            "name": "getItemById",
+            "id": "388debcc-87a4-41c3-a000-7448115b663d",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "localhost:3000/item/:id",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "item",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-388debcc-87a4-41c3-a000-7448115b663d"
+          },
+          {
+            "name": "createItem",
+            "id": "bcbf9337-461d-4345-a54f-9d61886153a2",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "POST",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"name\" : \"xy\",\r\n    \"price\" : 1111,\r\n    \"categoryId\" : 3\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "localhost:3000/item/",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "item",
+                  ""
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-bcbf9337-461d-4345-a54f-9d61886153a2"
+          },
+          {
+            "name": "deleteItem",
+            "id": "8ed58867-42df-4b98-8b76-e8b4a2fbedca",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "localhost:3000/item/:id",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "item",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-8ed58867-42df-4b98-8b76-e8b4a2fbedca"
+          }
+        ],
+        "id": "d6059fb4-ec35-45c1-8203-64b7da39d2ba",
+        "uid": "38461072-d6059fb4-ec35-45c1-8203-64b7da39d2ba"
+      },
+      {
+        "name": "order",
+        "item": [
+          {
+            "name": "getAllOrders",
+            "id": "7c958efc-e9af-44e3-8d9e-d68e8a73c627",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "localhost:3000/order/",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "order",
+                  ""
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-7c958efc-e9af-44e3-8d9e-d68e8a73c627"
+          },
+          {
+            "name": "getOrderById",
+            "id": "ab062d7d-c1e0-4fd4-9287-2686f230d656",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "localhost:3000/order/:id",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "order",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-ab062d7d-c1e0-4fd4-9287-2686f230d656"
+          },
+          {
+            "name": "createOrder",
+            "id": "4ee041e1-5d5b-4f41-b222-c77b3f468ba0",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "POST",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"tableId\" : 1,\r\n    \"items\" : [4,5]\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "localhost:3000/order/",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "order",
+                  ""
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-4ee041e1-5d5b-4f41-b222-c77b3f468ba0"
+          },
+          {
+            "name": "deleteOrder",
+            "id": "84117877-7205-4f4c-92c1-cfffbdb0f588",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "localhost:3000/order/:id",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "order",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-84117877-7205-4f4c-92c1-cfffbdb0f588"
+          }
+        ],
+        "id": "7717de2a-45ce-401b-81dc-2c0ace611294",
+        "uid": "38461072-7717de2a-45ce-401b-81dc-2c0ace611294"
+      },
+      {
+        "name": "paid",
+        "item": [
+          {
+            "name": "getAllPayments",
+            "id": "19ca41f9-082a-4700-95b6-b9dba73ad2ae",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "localhost:3000/paid",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "paid"
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-19ca41f9-082a-4700-95b6-b9dba73ad2ae"
+          },
+          {
+            "name": "getPaymentById",
+            "id": "4a43f570-0122-488b-80dd-b55a843f3f34",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "localhost:3000/paid/:id",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "paid",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-4a43f570-0122-488b-80dd-b55a843f3f34"
+          },
+          {
+            "name": "createPayment",
+            "id": "6f8a86db-04f8-4aa7-9459-4bbb14113ab1",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "POST",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"tableId\" : 1,\r\n    \"items\" : [4,5],\r\n    \"paymentMethodId\" : 1\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "localhost:3000/paid",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "paid"
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-6f8a86db-04f8-4aa7-9459-4bbb14113ab1"
+          },
+          {
+            "name": "deletePayment",
+            "id": "86407cf3-3c9e-4928-9344-ea0da9ad3cd7",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "localhost:3000/paid/:id",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "paid",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-86407cf3-3c9e-4928-9344-ea0da9ad3cd7"
+          }
+        ],
+        "id": "1d5143d9-d69f-4fe7-bfcb-49a10ac16466",
+        "uid": "38461072-1d5143d9-d69f-4fe7-bfcb-49a10ac16466"
+      },
+      {
+        "name": "paymentMethods",
+        "item": [
+          {
+            "name": "getAllMethods",
+            "id": "9f86b964-d648-44f7-8d9e-1dd453a76e8f",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "localhost:3000/paymentmethod/",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "paymentmethod",
+                  ""
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-9f86b964-d648-44f7-8d9e-1dd453a76e8f"
+          },
+          {
+            "name": "getMethodById",
+            "id": "0435fb1b-9787-4be6-84bf-9391bde534c8",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "localhost:3000/paymentmethod/:id",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "paymentmethod",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-0435fb1b-9787-4be6-84bf-9391bde534c8"
+          },
+          {
+            "name": "createMethod",
+            "id": "bca64185-e704-45f9-bc8f-026fa0c4104d",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "POST",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"name\" : \"xy\"\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "localhost:3000/paymentmethod/",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "paymentmethod",
+                  ""
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-bca64185-e704-45f9-bc8f-026fa0c4104d"
+          },
+          {
+            "name": "deleteMethod",
+            "id": "25fa9a6d-fa49-48bd-9bac-a2ebc60cbf42",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "localhost:3000/paymentmethod/:id",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "paymentmethod",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-25fa9a6d-fa49-48bd-9bac-a2ebc60cbf42"
+          }
+        ],
+        "id": "7813dbaa-0020-4f9c-a40d-1e57d4a07929",
+        "uid": "38461072-7813dbaa-0020-4f9c-a40d-1e57d4a07929"
+      },
+      {
+        "name": "permissionSetting",
+        "item": [
+          {
+            "name": "getAllSettings",
+            "id": "f5dc0b0f-614e-436c-9bf3-737a25285122",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "localhost:3000/permissionsetting/",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "permissionsetting",
+                  ""
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-f5dc0b0f-614e-436c-9bf3-737a25285122"
+          },
+          {
+            "name": "getSettingById",
+            "id": "5771e443-9664-48b6-b810-775b56c1fc88",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "localhost:3000/permissionsetting/:id",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "permissionsetting",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-5771e443-9664-48b6-b810-775b56c1fc88"
+          },
+          {
+            "name": "createSetting",
+            "id": "29d6649d-74b8-4b83-a986-f344ba7ca0e6",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "POST",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"section\" : \"xy\"\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "localhost:3000/permissionsetting/",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "permissionsetting",
+                  ""
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-29d6649d-74b8-4b83-a986-f344ba7ca0e6"
+          },
+          {
+            "name": "deleteSetting",
+            "id": "1f0802f2-8fe7-48c3-a3df-3ea5d31d8551",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "localhost:3000/permissionsetting/:id",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "permissionsetting",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-1f0802f2-8fe7-48c3-a3df-3ea5d31d8551"
+          }
+        ],
+        "id": "9c2bc349-ee52-4d1d-af40-47d00a65fb07",
+        "uid": "38461072-9c2bc349-ee52-4d1d-af40-47d00a65fb07"
+      },
+      {
+        "name": "reservedTables",
+        "item": [
+          {
+            "name": "getAllReservations",
+            "id": "35715c78-c1f7-49c9-af14-9ad3b50b7b0e",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "localhost:3000/reservation/",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "reservation",
+                  ""
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-35715c78-c1f7-49c9-af14-9ad3b50b7b0e"
+          },
+          {
+            "name": "getReservationById",
+            "id": "a9be5f6a-ea04-45b6-820a-75853394de9b",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "localhost:3000/reservation/:id",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "reservation",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-a9be5f6a-ea04-45b6-820a-75853394de9b"
+          },
+          {
+            "name": "createReservation",
+            "id": "03435b97-e724-49c5-a9c9-372360c83a1a",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "POST",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"tableId\" : 1,\r\n    \"name\" : \"xy\",\r\n    \"numberOfCustomers\" : 5,\r\n    \"resesrvedAt\" : \"2024-10-27T08:45:05.000Z\",\r\n    \"reservedUntil\" : \"2024-10-27T09:45:05.000Z\"\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "localhost:3000/reservation/",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "reservation",
+                  ""
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-03435b97-e724-49c5-a9c9-372360c83a1a"
+          },
+          {
+            "name": "deleteReservation",
+            "id": "e30fd836-59e3-4eb7-b851-74a41d3249ec",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "localhost:3000/reservation/:id",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "reservation",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-e30fd836-59e3-4eb7-b851-74a41d3249ec"
+          }
+        ],
+        "id": "557bbf45-f109-419c-8927-b3adc0d5951f",
+        "uid": "38461072-557bbf45-f109-419c-8927-b3adc0d5951f"
+      },
+      {
+        "name": "tables",
+        "item": [
+          {
+            "name": "getAllTables",
+            "id": "5dd59870-5e5a-4c81-8d43-1fd5ddad5d2f",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "localhost:3000/table/",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "table",
+                  ""
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-5dd59870-5e5a-4c81-8d43-1fd5ddad5d2f"
+          },
+          {
+            "name": "getTableById",
+            "id": "72bb5979-ebed-4c2f-a651-65aa89eb267f",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "localhost:3000/table/:id",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "table",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-72bb5979-ebed-4c2f-a651-65aa89eb267f"
+          },
+          {
+            "name": "createTable",
+            "id": "61470c7c-82fb-4f06-a430-951c707319c6",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "POST",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"tableNumber\" : 9\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "localhost:3000/table/",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "table",
+                  ""
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-61470c7c-82fb-4f06-a430-951c707319c6"
+          },
+          {
+            "name": "deleteTable",
+            "id": "e4304963-02f3-4ebf-b73a-062ba97b6838",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "localhost:3000/table/:id",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "table",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-e4304963-02f3-4ebf-b73a-062ba97b6838"
+          }
+        ],
+        "id": "7c695a8d-cd56-495d-a19c-19452a626529",
+        "uid": "38461072-7c695a8d-cd56-495d-a19c-19452a626529"
+      },
+      {
+        "name": "user",
+        "item": [
+          {
+            "name": "getAllUsers",
+            "id": "13ecd133-0b04-42e6-b31d-1b9e6aa8b748",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "localhost:3000/user/",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "user",
+                  ""
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-13ecd133-0b04-42e6-b31d-1b9e6aa8b748"
+          },
+          {
+            "name": "getUserById",
+            "id": "9f19d5a6-5fa4-4e6f-a2f5-8bc98bd77acc",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "localhost:3000/user/:id",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "user",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-9f19d5a6-5fa4-4e6f-a2f5-8bc98bd77acc"
+          },
+          {
+            "name": "deleteUser",
+            "id": "941ff0af-bb76-49e3-aab9-64226dd35971",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "localhost:3000/user/:id",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "user",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "38461072-941ff0af-bb76-49e3-aab9-64226dd35971"
+          }
+        ],
+        "id": "fe0447cd-83d6-4697-98be-0965ec9c1c8b",
+        "uid": "38461072-fe0447cd-83d6-4697-98be-0965ec9c1c8b"
+      }
+    ]
+  }
+}
