@@ -21,8 +21,5 @@
     "mysql": "^2.18.1",
     "session-memory-store": "^1.0.0",
     "uuid": "^11.0.1"
-  },
-  "devDependencies": {
-    "jest": "^29.7.0"
   }
 }
