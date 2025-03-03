@@ -13,7 +13,7 @@ const register = async (req, res) => {
 
   const users = await User.findOne(req.body.email)
 
-  if (users.data.length != 0) { res.status(409).send({"message" : "Az email cím már foglalt."}) }
+  if (users.data.length !== 0) { res.status(409).send({"message" : "Az email cím már foglalt."}) }
 
   else {
     const salt = await bcrypt.genSalt(10);
@@ -52,7 +52,7 @@ const login = async (req, res) => {
     },
     process.env.TOKEN_SECRET,
     {
-      expiresIn: "3h",
+      expiresIn: "20h",
     });
 
     const refreshToken = await generateRefreshToken(jti, user, sessionId);
@@ -91,7 +91,7 @@ const login = async (req, res) => {
       sid: sessionId,
     },
     process.env.TOKEN_SECRET,
-    { expiresIn: "3h"}
+    { expiresIn: "20h"}
     );
     
     try{
@@ -136,7 +136,7 @@ const generateRefreshToken = async (jti, user, sid) => {
       sid: sid,
     },
     process.env.TOKEN_SECRET,
-    { expiresIn: "1h" }
+    { expiresIn: "20h" }
   );
 };
 
@@ -144,7 +144,7 @@ const logout = async (req, res) => {
   try {
     const response = await deleteSession(req.cookies['connect.sid'].split(':')[1].split('.')[0])
 
-    if(response.response.affectedRows == 0) res.status(400).send({ message : "Hiba történt a kilépéskor"});
+    if(response.response.affectedRows === 0) res.status(400).send({ message : "Hiba történt a kilépéskor"});
 
     req.session.destroy((err) => {
       if (err) {

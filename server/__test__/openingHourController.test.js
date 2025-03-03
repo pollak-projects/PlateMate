@@ -46,7 +46,8 @@ beforeAll(async () => {
     });
 
     await new Promise((resolve, reject) => {
-        connect.query("INSERT INTO openinghours (dayName, fromHour, untilHour) VALUES ('Monday', '09:00:00', '17:00:00'), ('Tuesday', '09:00:00', '17:00:00')", (err) => {
+        connect.query("INSERT INTO openinghours (dayName, fromHour, untilHour) " +
+            "VALUES ('Monday', '09:00:00', '17:00:00'), ('Tuesday', '09:00:00', '17:00:00')", (err) => {
             if (err) reject(err);
             else resolve();
         });

@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no __test__ specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@jest/globals": "^29.7.0",
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.3",
     "cookie-parser": "^1.4.7",
@@ -20,6 +21,10 @@
     "jsonwebtoken": "^9.0.2",
     "mysql": "^2.18.1",
     "session-memory-store": "^1.0.0",
+    "supertest": "^7.0.0",
     "uuid": "^11.0.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
