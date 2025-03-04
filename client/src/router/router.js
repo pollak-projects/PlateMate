@@ -6,6 +6,8 @@ import Cashout from '../pages/cashout/Cashout.vue'
 import PaidOrders from '../pages/admin/PaidOrders.vue'
 import OpeningHours from '../pages/admin/OpeningHours.vue'
 import Orders from '../pages/orders/Orders.vue'
+import Categories from '../pages/admin/Categories.vue'
+import Items from '../pages/admin/Items.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
@@ -15,6 +17,8 @@ const routes = [
   { path: '/paid-orders', name: 'PaidOrders', component: PaidOrders },
   { path: '/opening-hours', name: 'OpeningHours', component: OpeningHours },
   { path: '/orders', name: 'Orders', component: Orders },
+  { path: '/categories', name: 'Categories', component: Categories },
+  { path: '/items', name: 'Items', component: Items },
 ]
 
 const router = createRouter({
