@@ -10,7 +10,7 @@ export default {
     <div class="not-found-body">
       <h2>404 - Az oldal nem található</h2>
       <p>Kérlek ellenőrizd az URL-t, vagy menj vissza a kezdőlapra.</p>
-      <button class="to-home-button"><router-link to="/" class="router-link">Kezdőlap</router-link></button>
+      <router-link to="/" class="router-link"><button class="to-home-button">Kezdőlap</button></router-link>
     </div>
   </section>
   </div>

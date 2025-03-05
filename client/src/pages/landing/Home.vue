@@ -82,6 +82,7 @@ export default {
         else this.triggerPopup("Hiba történt a kijelentkezés során!", "error");
       } catch (error) {
         this.triggerPopup("Hiba történt a kijelentkezés során!", "error");
+        this.$router.push({ name: 'Login' })
       }
     },
     toggleMenu(menuName) {

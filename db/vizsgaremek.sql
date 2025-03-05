@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `category`
 --
 
-CREATE TABLE `category` (
+CREATE TABLE IF NOT EXISTS `category` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
@@ -48,7 +48,7 @@ INSERT INTO `category` (`id`, `name`) VALUES
 -- Table structure for table `item`
 --
 
-CREATE TABLE `item` (
+CREATE TABLE IF NOT EXISTS `item` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `price` int(11) NOT NULL,
@@ -70,7 +70,7 @@ INSERT INTO `item` (`id`, `name`, `price`, `categoryId`) VALUES
 -- Table structure for table `openinghours`
 --
 
-CREATE TABLE `openinghours` (
+CREATE TABLE IF NOT EXISTS `openinghours` (
   `id` int(11) NOT NULL,
   `dayName` varchar(255) NOT NULL,
   `fromHour` varchar(255) NOT NULL,
@@ -96,7 +96,7 @@ INSERT INTO `openinghours` (`id`, `dayName`, `fromHour`, `untilHour`) VALUES
 -- Table structure for table `orders`
 --
 
-CREATE TABLE `orders` (
+CREATE TABLE IF NOT EXISTS `orders` (
   `id` int(11) NOT NULL,
   `tableId` int(11) NOT NULL,
   `itemId` int(11) NOT NULL,
@@ -157,7 +157,7 @@ INSERT INTO `orders` (`id`, `tableId`, `itemId`, `isDone`, `isServed`, `orderedA
 -- Table structure for table `paid`
 --
 
-CREATE TABLE `paid` (
+CREATE TABLE IF NOT EXISTS `paid` (
   `id` int(11) NOT NULL,
   `tableId` int(11) NOT NULL,
   `itemId` int(11) NOT NULL,
@@ -171,7 +171,7 @@ CREATE TABLE `paid` (
 -- Table structure for table `paymentmethods`
 --
 
-CREATE TABLE `paymentmethods` (
+CREATE TABLE IF NOT EXISTS `paymentmethods` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
@@ -189,7 +189,7 @@ INSERT INTO `paymentmethods` (`id`, `name`) VALUES
 -- Table structure for table `permissionsettings`
 --
 
-CREATE TABLE `permissionsettings` (
+CREATE TABLE IF NOT EXISTS `permissionsettings` (
   `id` int(11) NOT NULL,
   `section` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
@@ -210,7 +210,7 @@ INSERT INTO `permissionsettings` (`id`, `section`) VALUES
 -- Table structure for table `reservedtable`
 --
 
-CREATE TABLE `reservedtable` (
+CREATE TABLE IF NOT EXISTS `reservedtable` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `numberOfCustomers` int(11) NOT NULL,
@@ -236,7 +236,7 @@ INSERT INTO `reservedtable` (`id`, `name`, `numberOfCustomers`, `tableId`, `rese
 -- Table structure for table `sessions`
 --
 
-CREATE TABLE `sessions` (
+CREATE TABLE IF NOT EXISTS `sessions` (
   `id` varchar(255) NOT NULL,
   `userId` int(11) NOT NULL,
   `ip` varchar(255) NOT NULL,
@@ -257,7 +257,7 @@ INSERT INTO `sessions` (`id`, `userId`, `ip`, `expires`) VALUES
 -- Table structure for table `tables`
 --
 
-CREATE TABLE `tables` (
+CREATE TABLE IF NOT EXISTS `tables` (
   `id` int(11) NOT NULL,
   `tableNumber` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
@@ -290,7 +290,7 @@ INSERT INTO `tables` (`id`, `tableNumber`) VALUES
 -- Table structure for table `user`
 --
 
-CREATE TABLE `user` (
+CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
