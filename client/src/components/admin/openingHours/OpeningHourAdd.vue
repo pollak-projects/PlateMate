@@ -66,7 +66,7 @@ export default {
 
 <template>
   <div class="form-container">
-    <h2 class="form-title">Termék Létrehozás</h2>
+    <h2 class="form-title">Nyitvatartás Létrehozása</h2>
     <form @submit.prevent="createOpeningHour">
       <div class="form-group">
         <label class="form-label">Nap</label>
