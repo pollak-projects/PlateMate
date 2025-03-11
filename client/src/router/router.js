@@ -9,7 +9,9 @@ import Orders from '../pages/orders/Orders.vue'
 import Users from "../pages/admin/Users.vue";
 import Tables from "../pages/admin/Tables.vue";
 import Login from "../pages/auth/Login.vue";
-
+import Sections from '../pages/admin/Sections.vue'
+import Items from '../pages/admin/Items.vue'
+import Categories from '../pages/admin/Categories.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
@@ -22,6 +24,9 @@ const routes = [
   { path: '/users', name: 'Users', component: Users },
   { path: '/tables', name: 'Tables', component: Tables },
   { path: '/login', name: 'Login', component: Login },
+  { path: '/items', name: 'Items', component: Items },
+  { path: '/categories', name: 'Categories', component: Categories },
+  { path: '/sections', name: 'Sections', component: Sections },
 ]
 
 const router = createRouter({
