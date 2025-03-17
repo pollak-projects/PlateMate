@@ -1,6 +1,5 @@
 import { test, expect } from '@playwright/test';
 
-// Define environment variables for API URL and PORT
 const API_URL = process.env.VITE_API_URL || 'http://localhost';
 const API_PORT = process.env.VITE_API_PORT || '3000';
 
@@ -15,7 +14,7 @@ const mockLogoutResponse = {
 
 test.describe('Admin tables', () => {
     test.beforeEach(async ({ page }) => {
-        // Intercept API requests
+
         await page.route(`${API_URL}:${API_PORT}/redirect`, async route => {
             await route.fulfill({ json: mockRedirectResponse });
         });
@@ -36,12 +35,12 @@ test.describe('Admin tables', () => {
     });
 
     test('should switch components when navigation buttons are clicked', async ({ page }) => {
-        // Click to navigate to "Asztalok lista"
+        // navigate to "Asztalok lista"
         await page.click('.navbar-link:has-text("Asztalok lista")');
         await page.waitForTimeout(500); // Allow Vue to switch components
         await expect(page.locator('h2.form-title')).toHaveText('Asztalok'); // Check header text
 
-        // Click to navigate to "Új asztal"
+        // navigate to "Új asztal"
         await page.click('.navbar-link:has-text("Új asztal")');
         await page.waitForTimeout(500); // Allow Vue to switch components
         await expect(page.locator('h2.form-title')).toHaveText('Asztal Hozzáadás'); // Check header text

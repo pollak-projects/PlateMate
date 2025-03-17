@@ -1,10 +1,8 @@
 import { test, expect } from '@playwright/test';
 
-// Define environment variables for API URL and PORT
 const API_URL = process.env.VITE_API_URL || 'http://localhost';
 const API_PORT = process.env.VITE_API_PORT || '3000';
 
-// Mock API responses
 const mockRedirectResponse = {
     isAuthorized: true
 };
@@ -15,7 +13,7 @@ const mockLogoutResponse = {
 
 test.describe('Admin users panel', () => {
     test.beforeEach(async ({ page }) => {
-        // Intercept API requests
+
         await page.route(`${API_URL}:${API_PORT}/redirect`, async route => {
             await route.fulfill({ json: mockRedirectResponse });
         });
@@ -24,7 +22,6 @@ test.describe('Admin users panel', () => {
             await route.fulfill({ json: mockLogoutResponse });
         });
 
-        // Go to the admin panel page
         await page.goto('/users');
     });
 
@@ -36,12 +33,12 @@ test.describe('Admin users panel', () => {
     });
 
     test('should switch components when navigation buttons are clicked', async ({ page }) => {
-        // Click to navigate to "Felhasználók lista"
+        // navigate to "Felhasználók lista"
         await page.click('.navbar-link:has-text("Felhasználók lista")');
         await page.waitForTimeout(500); // Allow Vue to switch components
         await expect(page.locator('h2.form-title')).toHaveText('Felhasználók'); // Check header text
 
-        // Click to navigate to "Új felhasználó"
+        // navigate to "Új felhasználó"
         await page.click('.navbar-link:has-text("Új felhasználó")');
         await page.waitForTimeout(500); // Allow Vue to switch components
         await expect(page.locator('h2.form-title')).toHaveText('Felhasználó Létrehozás'); // Check header text

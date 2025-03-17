@@ -18,13 +18,11 @@ test.describe('Login.vue Component Tests', () => {
         const passwordInput = page.locator('input[name="password"]');
         await passwordInput.fill('password123');
 
-        // Ensure the password is initially hidden
         await expect(passwordInput).toHaveAttribute('type', 'password');
 
         // Click the toggle button
         await page.click('.password-toggle');
 
-        // Ensure the password is now visible
         await expect(passwordInput).toHaveAttribute('type', 'text');
     });
 });

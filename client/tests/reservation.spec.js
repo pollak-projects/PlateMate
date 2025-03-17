@@ -39,7 +39,6 @@ test.describe('Reservations.vue and components', () => {
 
             await page.goto('http://localhost:5173/reservations');
 
-            // Inject JavaScript to hook into Vue's event system
             await page.evaluate(() => {
                 document.querySelector('.reservation-container').addEventListener('tableSelected', (event) => {
                     window.onTableSelected(event.detail);
