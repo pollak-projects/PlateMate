@@ -30,13 +30,12 @@ describe('Table Controller', () => {
         connect.query(`
             CREATE TABLE IF NOT EXISTS tables (
                 id INT AUTO_INCREMENT PRIMARY KEY,
-                tableNumber INT NOT NULL,
-                capacity INT NOT NULL
+                tableNumber INT NOT NULL
             );
         `, (err) => {
             if (err) return done(err);
             connect.query(`
-                INSERT INTO tables (tableNumber, capacity) VALUES (1, 4), (2, 2);
+                INSERT INTO tables (tableNumber) VALUES (1), (2);
             `, (err) => {
                 if (err) return done(err);
                 done();
@@ -72,8 +71,7 @@ describe('Table Controller', () => {
     describe('POST /api/tables', () => {
         it('should create a new table', async () => {
             const table = {
-                tableNumber: 3,
-                capacity: 6
+                tableNumber: 3
             };
             const res = await request(app).post('/api/tables').send(table);
             expect(res.statusCode).toEqual(200);

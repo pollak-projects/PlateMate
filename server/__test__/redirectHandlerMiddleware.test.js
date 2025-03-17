@@ -59,7 +59,6 @@ describe('Redirect Handler', () => {
             const res = await request(app)
                 .get('/api/redirect?page=home')
                 .set('Cookie', ['connect.sid=s%3Avalidsessionid.abc123', 'token=validtoken']);
-            console.log(res.body);
             expect(res.statusCode).toEqual(200);
             expect(res.body).toHaveProperty('isAuthorized', !true);
         });
