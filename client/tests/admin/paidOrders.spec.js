@@ -2,10 +2,10 @@ import { test, expect } from '@playwright/test';
 
 test.describe('PaidOrders.vue', () => {
 
-    // Helper to login and navigate to PaidOrders page (if applicable)
+    // Helper to login and navigate to PaidOrders page
     async function loginAndNavigate(page) {
         // Assuming login logic for accessing the admin panel
-        await page.goto('/login'); // Adjust login URL if needed
+        await page.goto('/login');
         await page.fill('input[name="email"]', 'admin@admin');
         await page.fill('input[name="password"]', 'admin');
         await page.click('button[type="submit"]');
@@ -20,7 +20,7 @@ test.describe('PaidOrders.vue', () => {
     });
 
     test('redirectHandler correctly handles successful API call', async ({ page }) => {
-        // Mock successful response from the API
+
         await page.route('**/redirect', route =>
             route.fulfill({
                 status: 200,
@@ -43,8 +43,8 @@ test.describe('PaidOrders.vue', () => {
 
         await loginAndNavigate(page);
 
-        // Assuming redirection is handled via router, you should test URL or navigation
-        await expect(page).toHaveURL("http://localhost:5173/paid-orders"); // Adjust URL if needed
+
+        await expect(page).toHaveURL("http://localhost:5173/paid-orders");
     });
 
     test('displays paid orders when the request is successful', async ({ page }) => {
