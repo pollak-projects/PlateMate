@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendelések</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid black; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+<h2>Rendelések</h2>
+<p><%= message %></p>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Név</th>
+        <th>Ár</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% items.forEach(item => { %>
+        <tr>
+            <td><%= item.id %></td>
+            <td><%= item.itemName %></td>
+            <td><%= item.itemPrice %> Ft</td>
+        </tr>
+    <% }) %>
+    </tbody>
+</table>
+</body>
+</html>

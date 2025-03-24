@@ -345,42 +345,42 @@ const getOrdersByTableId = async (req, res) => {
     const { id } = req.params;
 
     if (!id) {
-        return res.status(400).json({ message: "Az ID megadása kötelező." });
+        return res.status(400).send("Az ID megadása kötelező.");
     }
 
     try {
-        const response = await new Promise((resolve, reject) => {
+        const orders = await new Promise((resolve, reject) => {
             connect.query(`
-                SELECT 
+                SELECT
                     o.id as id,
                     o.tableId as tableId,
                     o.itemId as itemId,
-                    o.orderedAt as orderedAt, 
-                    i.id as  itemId,
+                    o.orderedAt as orderedAt,
+                    i.id as itemId,
                     i.name as itemName,
                     i.price as itemPrice,
                     t.tableNumber as tableNumber
-                FROM 
+                FROM
                     orders o
-                JOIN 
-                    item i  ON o.itemId = i.id 
-                JOIN
+                        JOIN
+                    item i  ON o.itemId = i.id
+                        JOIN
                     tables t ON o.tableId = t.id
-                WHERE 
+                WHERE
                     t.id  = ?
-                    `, id, (err, result) => {
+            `, [id], (err, result) => {
                 if (err) reject(err);
                 else resolve(result);
             });
         });
 
-        if (!response.length) {
-            return res.status(204).json({ message: "Nincsenek elérhető kész rendelések." });
+        if (!orders.length) {
+            return res.render("orders", { message: "Nincsenek elérhető rendelések.", items: [] });
         }
 
-        return res.status(200).json({ message: "Kész rendelések sikeresen lekérve.", data: response });
+        res.render("orders", { message: "Rendelések sikeresen lekérve.", items: orders });
     } catch (error) {
-        res.status(500).json({ message: "Hiba történt a kész rendelések lekérése során.", error });
+        res.status(500).render("orders", { message: "Hiba történt a rendelések lekérése során.", items: [] });
     }
 };
 
