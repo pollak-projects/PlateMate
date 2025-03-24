@@ -12,6 +12,7 @@ import Login from "../pages/auth/Login.vue";
 import Sections from '../pages/admin/Sections.vue'
 import Items from '../pages/admin/Items.vue'
 import Categories from '../pages/admin/Categories.vue'
+import PaymentMethods from '../pages/admin/PaymentMethods.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
@@ -27,6 +28,7 @@ const routes = [
   { path: '/items', name: 'Items', component: Items },
   { path: '/categories', name: 'Categories', component: Categories },
   { path: '/sections', name: 'Sections', component: Sections },
+  { path: '/payment-methods', name: 'PaymentMethods', component: PaymentMethods },
 ]
 
 const router = createRouter({
