@@ -4,12 +4,11 @@
       <!-- The rendered EJS table will be injected here -->
     </div>
 
-
     <label class="form-label">Asztalszám</label>
     <div class="loading-spinner" v-if="tablesLoading">
       <div class="spinner"></div>
     </div>
-    <select v-model="selectedTable" @change="onTableChange" v-if="!tablesLoading" class="form-input">
+    <select v-model="selectedTable" @change="handleTableChange()" v-if="!tablesLoading" class="form-input">
       <option v-for="table in tables" :key="table.id" :value="table.id">
         {{ table.tableNumber }}
       </option>
@@ -31,7 +30,7 @@
       Kifizetés
     </button>
 
-    <Popup v-if="popupVisible" :message="popupMessage" :popupType="popupType" />
+    <Popup v-if="popupVisible" :message="popupMessage" :popupType="popupType" :isVisible="popupVisible"/>
   </div>
 </template>
 
@@ -74,6 +73,10 @@ export default {
         this.tablesLoading = false;
       }
     },
+    async handleTableChange() {
+      await this.onTableChange()
+      await this.onTableChange2();
+    },
     async loadPaymentMethods() {
       try {
         const response = await axios.get(`${import.meta.env.VITE_API_URL}:${import.meta.env.VITE_API_PORT}/payment-method/`, { withCredentials: true });
@@ -101,12 +104,29 @@ export default {
         this.triggerPopup("Hiba történt a rendelések lekérdezésekor!", "error");
       }
     },
+    async onTableChange2() {
+      if (!this.selectedTable) return;
+      try {
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}:${import.meta.env.VITE_API_PORT}/order/for-checkout2/${this.selectedTable}`, { withCredentials: true });
+        if (response.status === 200) {
+          this.items = response.data.data;
+          console.log(this.items)
+
+          this.sumPrice = this.items.reduce((total, item) => total + (item.itemPrice || 0), 0);
+        } else {
+          this.items = [];
+        }
+      } catch (error) {
+        this.triggerPopup("Hiba történt a rendelések lekérdezésekor!", "error");
+      }
+    },
     async sendPaid() {
       if (!this.selectedTable || !this.selectedPaymentMethod || this.items.length === 0) {
         return this.triggerPopup("Hiányzó adatok! Válassz asztalt és fizetési módot.", "error");
       }
 
       const itemIds = this.items.map(item => item.itemId);
+      const itemId = this.items.map(item => item.id);
       try {
         const response = await axios.post(`${import.meta.env.VITE_API_URL}:${import.meta.env.VITE_API_PORT}/paid/`, {
           tableId: this.selectedTable,
@@ -116,8 +136,8 @@ export default {
 
         if (response.status === 200) {
           this.triggerPopup("Sikeres kifizetés!", "success");
-          await this.deleteOrders(itemIds);
-          window.location.reload();
+          await this.deleteOrders(itemId);
+          //window.location.reload();
         }
       } catch (error) {
         this.triggerPopup("Hiba történt a kifizetés során!", "error");

@@ -117,11 +117,12 @@ const deleteOrderByArray = async (req, res) => {
 
         response.forEach((result) => {
             if (!res.headersSent && result.affectedRows === 0) res.status(204).json({ message: "Rendelés nem található." });
+            console.log(result[0])
+            console.log(items[0])
         });
 
         if (!res.headersSent) return res.status(200).json({ message: "Rendelések sikeresen törölve.", data: response });
     } catch (error) {
-        console.log(error)
         res.status(500).json({ message: "Hiba történt a rendelések törlése során.", error });
     }
 };
@@ -384,6 +385,46 @@ const getOrdersByTableId = async (req, res) => {
     }
 };
 
+const getOrdersByTableId2 = async (req, res) => {
+
+    const { id } = req.params;
+    if (!id) {
+        return res.status(400).json({ message: "Az ID megadása kötelező." });
+    }
+    try {
+        const response = await new Promise((resolve, reject) => {
+            connect.query(`
+                SELECT
+                    o.id as id,
+                    o.tableId as tableId,
+                    o.itemId as itemId,
+                    o.orderedAt as orderedAt,
+                    i.id as  itemId,
+                    i.name as itemName,
+                    i.price as itemPrice,
+                    t.tableNumber as tableNumber
+                FROM
+                    orders o
+                        JOIN
+                    item i  ON o.itemId = i.id
+                        JOIN
+                    tables t ON o.tableId = t.id
+                WHERE
+                    t.id  = ?
+            `, id, (err, result) => {
+                if (err) reject(err);
+                else resolve(result);
+            });
+        });
+        if (!response.length) {
+            return res.status(204).json({ message: "Nincsenek elérhető kész rendelések." });
+        }
+        return res.status(200).json({ message: "Kész rendelések sikeresen lekérve.", data: response });
+    } catch (error) {
+        return res.status(500).json({ message: "Hiba történt a kész rendelések lekérése során.", error });
+    }
+};
+
 
 module.exports = {
     getAllOrders,
@@ -398,5 +439,6 @@ module.exports = {
     rollbackDoneOrder,
     setServedOrder,
     rollbackServedOrder,
-    getOrdersByTableId
+    getOrdersByTableId,
+    getOrdersByTableId2
 };

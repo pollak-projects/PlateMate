@@ -15,8 +15,10 @@ const{
     rollbackDoneOrder,
     setServedOrder,
     rollbackServedOrder,
-    getOrdersByTableId
+    getOrdersByTableId,
+    getOrdersByTableId2
 } = require('../controllers/orderController.js')
+
 
 Router.get('/', roleCheck(['admin', 'waiter', 'cashier']), getAllOrders);
 
@@ -27,6 +29,8 @@ Router.get('/finished/', roleCheck(['admin', 'waiter', 'cashier', 'chef']), getA
 Router.get('/served/', roleCheck(['admin', 'waiter', 'cashier', 'chef']), getAllServedOrders);
 
 Router.get('/for-checkout/:id', roleCheck(['admin', 'cashier']), getOrdersByTableId);
+
+Router.get('/for-checkout2/:id', roleCheck(['admin', 'cashier']), getOrdersByTableId2);
 
 Router.get('/:id', roleCheck(['admin', 'waiter', 'cashier']), getOrderById);
 
