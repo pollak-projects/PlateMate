@@ -22,6 +22,7 @@ const orderRoutes = require("./routes/orderRoutes");
 const paidRoutes = require("./routes/paidRoutes");
 const reservedTableRoutes = require("./routes/reservedTableRoutes");
 const openingHourRoutes = require("./routes/openingHourRoutes")
+const path = require("path");
 
 dotenv.config();
 
@@ -46,6 +47,9 @@ app.use(
         },
     })
 );
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 app.use(checkSessionMiddleware);
 app.use(checkTokenMiddleware);

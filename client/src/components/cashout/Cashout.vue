@@ -1,24 +1,9 @@
 <template>
   <div class="form-container">
-    <h2 class="form-title">Elfogyasztott termékek</h2>
-    <div class="table-container min-h-[25em]">
-      <table class="item-table">
-        <thead>
-        <tr>
-          <th>ID</th>
-          <th>Név</th>
-          <th>Ár</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr v-for="(item, index) in items" :key="index">
-          <td>{{ item.id }}</td>
-          <td>{{ item.itemName }}</td>
-          <td>{{ item.itemPrice }} Ft</td>
-        </tr>
-        </tbody>
-      </table>
+    <div id="orders-container">
+      <!-- The rendered EJS table will be injected here -->
     </div>
+
 
     <label class="form-label">Asztalszám</label>
     <div class="loading-spinner" v-if="tablesLoading">
@@ -104,12 +89,13 @@ export default {
     async onTableChange() {
       if (!this.selectedTable) return;
       try {
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}:${import.meta.env.VITE_API_PORT}/order/for-checkout/${this.selectedTable}`, { withCredentials: true });
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}:${import.meta.env.VITE_API_PORT}/order/for-checkout/${this.selectedTable}`, {
+          withCredentials: true,
+          responseType: "text"  // Axios expect raw HTML
+        });
+
         if (response.status === 200) {
-          this.items = response.data.data;
-          this.sumPrice = this.items.reduce((total, item) => total + (item.itemPrice || 0), 0);
-        } else {
-          this.items = [];
+          document.getElementById("orders-container").innerHTML = response.data; // Inject HTML into a container
         }
       } catch (error) {
         this.triggerPopup("Hiba történt a rendelések lekérdezésekor!", "error");

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendelések</title>
+    <style>
+        .form-container {
+            background-color: #282828;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 32px;
+            max-width: 600px;
+            width: 100%;
+        }
+        .form-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .table-container {
+            max-height: 400px;
+            overflow-y: auto;
+            border: #49d0ce solid 2px;
+            border-radius: 4px;
+        }
+        .item-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #575757;
+            text-align: left;
+        }
+        .item-table th, .item-table td {
+            padding: 12px;
+            font-size: 18px;
+            color: white;
+            border: 1px solid #49d0ce;
+        }
+        .item-table th {
+            background-color: #49d0ce;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="form-title">Elfogyasztott termékek</h2>
+    <div class="table-container">
+        <table class="item-table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Név</th>
+                <th>Ár</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% items.forEach(item => { %>
+                <tr>
+                    <td><%= item.id %></td>
+                    <td><%= item.itemName %></td>
+                    <td><%= item.itemPrice %> Ft</td>
+                </tr>
+            <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
