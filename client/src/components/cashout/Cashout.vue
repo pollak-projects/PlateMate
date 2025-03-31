@@ -137,7 +137,7 @@ export default {
         if (response.status === 200) {
           this.triggerPopup("Sikeres kifizetés!", "success");
           await this.deleteOrders(itemId);
-          //window.location.reload();
+          window.location.reload();
         }
       } catch (error) {
         this.triggerPopup("Hiba történt a kifizetés során!", "error");
