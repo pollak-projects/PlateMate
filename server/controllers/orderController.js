@@ -117,8 +117,6 @@ const deleteOrderByArray = async (req, res) => {
 
         response.forEach((result) => {
             if (!res.headersSent && result.affectedRows === 0) res.status(204).json({ message: "Rendelés nem található." });
-            console.log(result[0])
-            console.log(items[0])
         });
 
         if (!res.headersSent) return res.status(200).json({ message: "Rendelések sikeresen törölve.", data: response });
