@@ -172,7 +172,7 @@ export default {
 
         <p class="footer-text">
           <i class="fas fa-envelope"></i>
-          Kapcsolat: <a href="mailto:platemate@gmail.com">platemate@gmail.com</a>
+          Kapcsolat: <a href="mailto:bmate20050911@gmail.com">bmate20050911@gmail.com</a>
         </p>
         <p class="footer-text">
           <i class="fas fa-phone"></i>
@@ -180,7 +180,7 @@ export default {
         </p>
         <p class="footer-text">
           <i class="fas fa-copyright"></i>
-          2024 PlateMate. Minden jog fenntartva.
+          2025 PlateMate. Minden jog fenntartva.
         </p>
       </div>
     </footer>
