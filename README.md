@@ -9,3 +9,4 @@
 - **Figma:** https://www.figma.com/design/3tZnrive652ayQGdJHn83o/PlateMate-Design?node-id=0-1&p=f&t=rxeJMnrG8OveM5qb-0
 - **GANTT Viewer:** https://www.onlinegantt.com/?authuser=0#/gantt 
 - A Vizsgaremek.gantt file-t a /docs/ mappából ide importálják be ^
+- Backend flowchart diagrammot erre a linkre importálják be: https://app.diagrams.net/?src=about
