@@ -1,3 +1,9 @@
+CREATE DATABASE IF NOT EXISTS `vizsgaremek`
+  DEFAULT CHARACTER SET utf8
+  COLLATE utf8_general_ci;
+
+USE `vizsgaremek`;
+
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
